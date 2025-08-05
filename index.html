@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigilante Type Engine</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="httpshttps://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="container">
+            <h1>Vigilante Type Engine</h1>
+            <p>Your answers to these questions will help show how you like to look at things and how you like to go about doing things. There are no "right" or "wrong" answers. Knowing your own preferences and learning about other people's can help you understand what your strengths are, what kinds of work you might enjoy and how people with different preferences can relate to one another and contribute to society.</p>
+            <p>Please answer the questions based on how you usually feel or act. Do not spend too much time thinking about each question, if you cannot decide on an answer, feel free to skip it.</p>
+            <button id="start-btn" class="btn btn-primary">Begin Assessment</button>
+        </div>
+    </div>
+
+    <!-- NEW: Preference vs. Skill Screen -->
+    <div id="preference-skill-screen" class="screen">
+        <div class="container">
+            <h2>Preference, Not Skill</h2>
+            <p class="subtitle">Before you begin, it's important to understand what we mean by "preference." Think about signing your name.</p>
+            <p>You can likely write with both hands, but you have a natural preference for one. Writing with your preferred hand is smooth, easy, and comfortable. Writing with the other hand feels awkward, slow, and takes more concentration, even if you practice.</p>
+            <p>The questions in this assessment work the same way. They are not about what you *can* do, but about what you *prefer* to do—what feels most natural and comfortable. Answer based on your "at-home," relaxed self, not your "at-work" or "on-your-best-behavior" self.</p>
+            <button id="continue-to-quiz-btn" class="btn btn-primary">Continue to Assessment</button>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen">
+        <div class="container">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="question-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+            <div id="navigation-container">
+                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                <button id="skip-btn" class="btn btn-primary">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+        <div class="container">
+            <h2>Your Reported Type</h2>
+            <p class="subtitle">This is the result based on your answers. The next step is to verify if this type truly fits you.</p>
+            <!-- NEW: Omissions Warning -->
+            <div id="omissions-warning" class="info-box warning" style="display: none;"></div>
+            <div id="results-display">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+            <p class="info-box"><strong>Important:</strong> This is an indicator, not a test. The result suggests your likely preferences. The following verification process is essential to determine your "Best Fit Type," which is the most accurate reflection of you.</p>
+            <button id="verify-btn" class="btn btn-primary">Start Verification</button>
+        </div>
+    </div>
+
+    <!-- Verification Screen -->
+    <div id="verification-screen" class="screen">
+        <div class="container">
+            <h2 id="verification-title">Verify Your Preference</h2>
+            <p id="verification-instruction" class="subtitle"></p>
+            <div id="verification-options" class="verification-grid">
+                <!-- Verification options will be dynamically inserted here -->
+            </div>
+            <p class="info-box">Your reported result showed a <strong id="clarity-text"></strong> preference. Read both descriptions and choose the one that feels most natural to you, like signing your name with your dominant hand.</p>
+        </div>
+    </div>
+
+    <!-- Final Best Fit Type Screen -->
+    <div id="final-screen" class="screen">
+        <div class="container">
+            <h2>Your Best Fit Type</h2>
+            <p class="subtitle">Based on your self-assessment, this is your verified type.</p>
+            <div id="final-type-display" class="final-type-card">
+                <!-- Final type will be inserted here -->
+            </div>
+            <p>Understanding your type is a journey of self-discovery. Use this insight to better understand your motivations, strengths, and potential areas for growth.</p>
+            <button id="restart-btn" class="btn btn-secondary">Restart</button>
+        </div>
+    </div>
+
+</div>
+<script type="module" src="app.js"></script>
+<script type="module" src="dummy.js"></script>
+</body>
+</html>

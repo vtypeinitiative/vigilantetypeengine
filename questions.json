@@ -1,0 +1,980 @@
+{
+  "MBTI_Form_M": [
+    {
+      "number": 1,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Planful / Open-ended",
+      "question": "When you go somewhere for the day, would you rather",
+      "options": {
+        "A": { "text": "plan what you will do and when, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "just go?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 2,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Practical / Conceptual",
+      "question": "If you were a teacher, would you rather teach",
+      "options": {
+        "A": { "text": "fact courses, or", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "courses involving theory?", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 3,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Enthusiastic / Quiet",
+      "question": "Are you usually",
+      "options": {
+        "A": { "text": "a 'good mixer,' or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "rather quiet and reserved?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 4,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Planful / Open-ended",
+      "question": "Do you prefer to",
+      "options": {
+        "A": { "text": "arrange dates, parties, etc., well in advance, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "be free to do whatever looks like fun when the time comes?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 5,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "question": "Do you usually get along better with",
+      "options": {
+        "A": { "text": "imaginative people, or", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "realistic people?", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 6,
+      "part": "I",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "question": "Do you more often let",
+      "options": {
+        "A": { "text": "your heart rule your head, or", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "your head rule your heart?", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 7,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "question": "When you are with a group of people, would you usually rather",
+      "options": {
+        "A": { "text": "join in the talk of the group, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "talk individually with people you know well?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 8,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "Do you prefer to do many things",
+      "options": {
+        "A": { "text": "on the spur of the moment, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "according to your plans?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 9,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Practical / Conceptual",
+      "question": "Would you rather be considered",
+      "options": {
+        "A": { "text": "a practical person, or", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "an ingenious person?", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 10,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Initiating / Receiving",
+      "question": "In a large group do you more often",
+      "options": {
+        "A": { "text": "introduce others, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "get introduced?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 11,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "question": "Are you more attracted to",
+      "options": {
+        "A": { "text": "a person with a quick and brilliant mind, or", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "a practical person with a lot of common sense?", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 12,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "Does following a schedule",
+      "options": {
+        "A": { "text": "appeal to you, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "cramp you?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 13,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Expressive / Contained",
+      "question": "Would you say it generally takes others",
+      "options": {
+        "A": { "text": "a lot of time to get to know you, or", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "a little time to get to know you?", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 14,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Systematic / Casual",
+      "question": "Does the idea of making a list of what you should get done over a weekend",
+      "options": {
+        "A": { "text": "appeal to you, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "leave you cold?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 15,
+      "part": "I",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "question": "Is it a higher compliment to be called",
+      "options": {
+        "A": { "text": "a person of real feeling, or", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "a consistently reasonable person?", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 16,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "question": "Do you tend to spend a lot of time",
+      "options": {
+        "A": { "text": "by yourself, or", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "with others?", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 17,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Early Starting / Pressure Prompted",
+      "question": "In your daily work, do you",
+      "options": {
+        "A": { "text": "rather enjoy an emergency that makes you work against time, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "usually plan your work so you won't need to work under pressure?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 18,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "question": "Would you rather have as a friend someone who",
+      "options": {
+        "A": { "text": "is always coming up with new ideas, or", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "has both feet on the ground?", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 19,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Expressive / Contained",
+      "question": "Can you",
+      "options": {
+        "A": { "text": "talk easily to almost anyone for as long as you have to, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "find a lot to say only to certain people or under certain conditions?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 20,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Methodical / Emergent",
+      "question": "When you have a special job to do, do you like to",
+      "options": {
+        "A": { "text": "organize it carefully before you start, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "find out what is necessary as you go along?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 21,
+      "part": "I",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "question": "Are you inclined to",
+      "options": {
+        "A": { "text": "value sentiment more than logic, or", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "value logic more than sentiment?", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 22,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Concrete / Abstract",
+      "question": "In reading for pleasure, do you",
+      "options": {
+        "A": { "text": "enjoy odd or original ways of saying things, or", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "like writers to say exactly what they mean?", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 23,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Initiating / Receiving",
+      "question": "Can the new people you meet tell what you are interested in",
+      "options": {
+        "A": { "text": "right away, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "only after they really get to know you?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 24,
+      "part": "I",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "In planning a trip would you prefer to",
+      "options": {
+        "A": { "text": "most of the time do whatever you feel like that day, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "know ahead of time what you'll be doing most days?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 25,
+      "part": "I",
+      "dichotomy": "S-N",
+      "facet": "Traditional / Original",
+      "question": "In doing something that many other people do, does it appeal to you more to",
+      "options": {
+        "A": { "text": "do it in the accepted way, or", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "invent a way of your own?", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 26,
+      "part": "I",
+      "dichotomy": "E-I",
+      "facet": "Expressive / Contained",
+      "question": "Would most people say you are",
+      "options": {
+        "A": { "text": "a private person, or", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "a very open person?", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 27,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Concrete / Abstract",
+      "options": {
+        "A": { "text": "abstract", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "solid", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 28,
+      "part": "II",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "options": {
+        "A": { "text": "scheduled", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "unplanned", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 29,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "gentle", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "firm", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 30,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Practical / Conceptual",
+      "options": {
+        "A": { "text": "facts", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "ideas", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 31,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "options": {
+        "A": { "text": "thinking", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "feeling", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 32,
+      "part": "II",
+      "dichotomy": "E-I",
+      "facet": "Enthusiastic / Quiet",
+      "options": {
+        "A": { "text": "hearty", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "quiet", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 33,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "convincing", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "touching", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 34,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Concrete / Abstract",
+      "options": {
+        "A": { "text": "statement", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "concept", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 35,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "options": {
+        "A": { "text": "analyze", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "sympathize", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 36,
+      "part": "II",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "options": {
+        "A": { "text": "systematic", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "spontaneous", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 37,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "options": {
+        "A": { "text": "sensitive", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "just", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 38,
+      "part": "II",
+      "dichotomy": "E-I",
+      "facet": "Enthusiastic / Quiet",
+      "options": {
+        "A": { "text": "reserved", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "talkative", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 39,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Experiential / Theoretical",
+      "options": {
+        "A": { "text": "no-nonsense", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "theoretical", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 40,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "options": {
+        "A": { "text": "compassion", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "foresight", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 41,
+      "part": "II",
+      "dichotomy": "J-P",
+      "facet": "Systematic / Casual",
+      "options": {
+        "A": { "text": "systematic", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "casual", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 42,
+      "part": "II",
+      "dichotomy": "E-I",
+      "facet": "Enthusiastic / Quiet",
+      "options": {
+        "A": { "text": "quiet", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "outgoing", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 43,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "options": {
+        "A": { "text": "benefits", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "blessings", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 44,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Experiential / Theoretical",
+      "options": {
+        "A": { "text": "theory", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "certainty", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 45,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "options": {
+        "A": { "text": "determined", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "devoted", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 46,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Concrete / Abstract",
+      "options": {
+        "A": { "text": "idea", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "actuality", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 47,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "strong-willed", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "tenderhearted", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 48,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "options": {
+        "A": { "text": "imaginative", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "matter-of-fact", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 49,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "objective", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "passionate", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 50,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Traditional / Original",
+      "options": {
+        "A": { "text": "make", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "create", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 51,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "warm", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "objective", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 52,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "options": {
+        "A": { "text": "sensible", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "fascinating", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 53,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "options": {
+        "A": { "text": "compassionate", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "logical", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 54,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Practical / Conceptual",
+      "options": {
+        "A": { "text": "production", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "design", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 55,
+      "part": "II",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "options": {
+        "A": { "text": "impulse", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "decision", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 56,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "options": {
+        "A": { "text": "fair-minded", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "caring", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 57,
+      "part": "II",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "options": {
+        "A": { "text": "quiet", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "gregarious", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 58,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "options": {
+        "A": { "text": "analytical", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "sentimental", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 59,
+      "part": "II",
+      "dichotomy": "J-P",
+      "facet": "Planful / Open-ended",
+      "options": {
+        "A": { "text": "unconstrained", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "scheduled", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 60,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Concrete / Abstract",
+      "options": {
+        "A": { "text": "concrete", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "abstract", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 61,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "practical", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "sentimental", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 62,
+      "part": "II",
+      "dichotomy": "E-I",
+      "facet": "Expressive / Contained",
+      "options": {
+        "A": { "text": "open", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "private", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 63,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Traditional / Original",
+      "options": {
+        "A": { "text": "build", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "invent", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 64,
+      "part": "II",
+      "dichotomy": "J-P",
+      "facet": "Systematic / Casual",
+      "options": {
+        "A": { "text": "orderly", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "easygoing", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 65,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "options": {
+        "A": { "text": "imaginative", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "realistic", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 66,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Critical / Accepting",
+      "options": {
+        "A": { "text": "competent", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "kindhearted", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 67,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Experiential / Theoretical",
+      "options": {
+        "A": { "text": "theory", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "fact", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 68,
+      "part": "II",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "options": {
+        "A": { "text": "few friends", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "lots of friends", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 69,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Realistic / Imaginative",
+      "options": {
+        "A": { "text": "possibilities", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "certainties", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 70,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "options": {
+        "A": { "text": "bighearted", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "firm-minded", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 71,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Traditional / Original",
+      "options": {
+        "A": { "text": "novel", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "already known", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 72,
+      "part": "II",
+      "dichotomy": "T-F",
+      "facet": "Tough / Tender",
+      "options": {
+        "A": { "text": "tenderness", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "strength", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 73,
+      "part": "II",
+      "dichotomy": "S-N",
+      "facet": "Traditional / Original",
+      "options": {
+        "A": { "text": "practical", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "innovative", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 74,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Active / Reflective",
+      "question": "Do you find being around a lot of people",
+      "options": {
+        "A": { "text": "gives you more energy, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "is often 'draining'?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 75,
+      "part": "III",
+      "dichotomy": "T-F",
+      "facet": "Logical / Empathetic",
+      "question": "When making a decision, is it more important to you to",
+      "options": {
+        "A": { "text": "weigh the facts, or", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "consider people's feelings and opinions?", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 76,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Planful / Open-ended",
+      "question": "Do you generally prefer to",
+      "options": {
+        "A": { "text": "make your social engagements some distance ahead, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "be free to do things on the spur of the moment?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 77,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Enthusiastic / Quiet",
+      "question": "At parties, do you",
+      "options": {
+        "A": { "text": "sometimes get bored, or", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "always have fun?", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 78,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "In most instances, do you prefer to",
+      "options": {
+        "A": { "text": "go with the flow, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "follow a schedule?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 79,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "question": "Do you usually",
+      "options": {
+        "A": { "text": "mingle well with others, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "tend to keep more to yourself?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 80,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Planful / Open-ended",
+      "question": "Do you prefer to",
+      "options": {
+        "A": { "text": "wait and see what happens and then make plans, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "plan things far in advance?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 81,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Expressive / Contained",
+      "question": "Are you",
+      "options": {
+        "A": { "text": "easy to get to know, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "hard to get to know?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 82,
+      "part": "III",
+      "dichotomy": "S-N",
+      "facet": "Practical / Conceptual",
+      "question": "Do you generally prefer courses that teach",
+      "options": {
+        "A": { "text": "concepts and principles, or", "pole": "N", "scoreKey": 0 },
+        "B": { "text": "facts and figures?", "pole": "S", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 83,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Initiating / Receiving",
+      "question": "At parties do you",
+      "options": {
+        "A": { "text": "do much of the talking, or", "pole": "E", "scoreKey": 1 },
+        "B": { "text": "let others do most of the talking?", "pole": "I", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 84,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "Do you consider yourself to be",
+      "options": {
+        "A": { "text": "more of a spontaneous person, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "more of an organized person?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 85,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "question": "Can you keep a conversation going indefinitely",
+      "options": {
+        "A": { "text": "only with people who share some interest of yours, or", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "with almost anyone?", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 86,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Methodical / Emergent",
+      "question": "When you start a big project that is due in a week, do you",
+      "options": {
+        "A": { "text": "take time to list the separate things to be done and the order of doing them, or", "pole": "J", "scoreKey": 1 },
+        "B": { "text": "plunge in?", "pole": "P", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 87,
+      "part": "III",
+      "dichotomy": "T-F",
+      "facet": "Reasonable / Compassionate",
+      "question": "Which is a higher compliment, to be called",
+      "options": {
+        "A": { "text": "competent, or", "pole": "T", "scoreKey": 1 },
+        "B": { "text": "compassionate?", "pole": "F", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 88,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "Do you find going by a schedule",
+      "options": {
+        "A": { "text": "necessary at times but generally unfavorable, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "helpful and favorable most of the time?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 89,
+      "part": "III",
+      "dichotomy": "T-F",
+      "facet": "Questioning / Accommodating",
+      "question": "Would you rather work under a boss (or teacher) who is",
+      "options": {
+        "A": { "text": "good-natured but often inconsistent, or", "pole": "F", "scoreKey": 0 },
+        "B": { "text": "sharp-tongued but always logical?", "pole": "T", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 90,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Methodical / Emergent",
+      "question": "When working on a big assignment, do you tend to",
+      "options": {
+        "A": { "text": "figure out what needs to be done as you go along, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "begin by breaking it down into steps?", "pole": "J", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 91,
+      "part": "III",
+      "dichotomy": "E-I",
+      "facet": "Gregarious / Intimate",
+      "question": "In social situations do you generally find it",
+      "options": {
+        "A": { "text": "difficult to start and maintain a conversation with some people, or", "pole": "I", "scoreKey": 0 },
+        "B": { "text": "easy to talk to most people for long periods of time?", "pole": "E", "scoreKey": 1 }
+      }
+    },
+    {
+      "number": 92,
+      "part": "III",
+      "dichotomy": "S-N",
+      "facet": "Traditional / Original",
+      "question": "Would you rather",
+      "options": {
+        "A": { "text": "support the established methods of doing good, or", "pole": "S", "scoreKey": 1 },
+        "B": { "text": "analyze what is still wrong and attack unsolved problems?", "pole": "N", "scoreKey": 0 }
+      }
+    },
+    {
+      "number": 93,
+      "part": "III",
+      "dichotomy": "J-P",
+      "facet": "Scheduled / Spontaneous",
+      "question": "Would you prefer to do most things according to",
+      "options": {
+        "A": { "text": "however you feel that particular day, or", "pole": "P", "scoreKey": 0 },
+        "B": { "text": "a set schedule?", "pole": "J", "scoreKey": 1 }
+      }
+    }
+  ]
+}
