@@ -6,7 +6,7 @@
     <title>Vigilante Type Engine</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="httpshttps://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <!-- Final Best Fit Type Screen -->
+
     <div id="final-screen" class="screen">
         <div class="container">
             <h2>Your Best Fit Type</h2>
@@ -86,11 +86,54 @@
                 <!-- Final type will be inserted here -->
             </div>
             <p>Understanding your type is a journey of self-discovery. Use this insight to better understand your motivations, strengths, and potential areas for growth.</p>
-            <button id="restart-btn" class="btn btn-secondary">Restart</button>
+            <!-- CHANGE THIS BUTTON -->
+            <button id="continue-to-survey-btn" class="btn btn-primary">Continue</button>
+        </div>
+    </div>
+
+    <div id="survey-screen" class="screen">
+        <div class="container">
+            <h2>One Last Thing...</h2>
+            <p class="subtitle">Your feedback helps improve this tool and research into personality. Your answers are appreciated!</p>
+
+            <form id="post-quiz-form" style="text-align: left; max-width: 500px; margin: 2rem auto;">
+                <!-- Email Input -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="email-input" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Your Email (Optional)</label>
+                    <p style="font-size: 0.85rem; margin-top: -0.75rem; margin-bottom: 0.5rem; color: var(--medium-grey);">Receive updates and participate in future research.</p>
+                    <input type="email" id="email-input" name="email" placeholder="you@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--light-grey);">
+                </div>
+
+                <!-- Survey Question 1 -->
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Do you enjoy frameworks with the 16 Personality Types (INTP, ESFJ, etc)?</p>
+                    <label style="display: block; margin-bottom: 0.5rem;"><input type="radio" name="enjoys_frameworks" value="true" required> Yes</label>
+                    <label style="display: block;"><input type="radio" name="enjoys_frameworks" value="false"> No</label>
+                </div>
+
+                <!-- Survey Question 2 -->
+                <div style="margin-bottom: 2rem;">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Would you like it if personality was covered more deeply in schools?</p>
+                    <label style="display: block; margin-bottom: 0.5rem;"><input type="radio" name="wants_in_schools" value="true" required> Yes</label>
+                    <label style="display: block;"><input type="radio" name="wants_in_schools" value="false"> No</label>
+                </div>
+
+                <button type="submit" id="finish-survey-btn" class="btn btn-primary" style="width: 100%;">Finish and Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="thank-you-screen" class="screen">
+        <div class="container">
+            <h2>Thank You!</h2>
+            <p class="subtitle">Your responses have been submitted. Your contribution is valuable.</p>
+            <button id="restart-btn" class="btn btn-secondary">Take the Assessment Again</button>
         </div>
     </div>
 
 </div>
-<script type="module" src="app.js"></script
+<script type="module" src="dummy.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>

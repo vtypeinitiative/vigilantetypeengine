@@ -243,21 +243,19 @@ input[type="radio"] {
     transform: scale(1);
 }
 
-/* Find the existing .error-text rule and replace it with this */
 .error-text {
     color: var(--error);
     margin-top: 1rem;
     height: 1em;
-    width: 100%; /* Make it full width to not interfere with buttons */
+    width: 100%;
 }
 
-/* Add this new rule for the navigation container */
 #navigation-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap; /* To handle the error message below */
+    flex-wrap: wrap;
 }
 
 /* --- Results & Verification --- */
@@ -272,9 +270,8 @@ input[type="radio"] {
     font-size: 0.9rem;
 }
 
-/* Add this new rule for the omissions warning box */
 .info-box.warning {
-    background-color: #fef9e7; /* A light yellow */
+    background-color: #fef9e7;
     border-left-color: var(--warning);
     color: var(--dark-grey);
 }
@@ -363,4 +360,32 @@ input[type="radio"] {
 
 #restart-btn {
     margin-top: 2rem;
+}
+
+/* --- NEW STYLES FOR THE SURVEY SCREEN --- */
+/*
+  This block adds styles specifically for the simple radio buttons
+  in the final survey form. It makes them visible and styles them
+  to match the rest of the application's theme.
+*/
+#post-quiz-form input[type="radio"] {
+    /* Revert the "display: none" from the general rule */
+    display: inline-block;
+    /* Use a modern CSS property to color the native radio button */
+    accent-color: var(--primary-accent);
+    /* Make the button slightly bigger and align it with the text */
+    width: 1.15em;
+    height: 1.15em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+/* Make the survey labels easier to click and align items */
+#post-quiz-form label {
+    cursor: pointer;
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
 }

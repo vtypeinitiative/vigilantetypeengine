@@ -1,21 +1,20 @@
-import { calculateResults } from './scorer.js';
-import { itemParameters } from './itemParameterMatrix.js';
+// app.js (Corrected and Simplified)
 
-
+// No code or imports should be outside this listener
 document.addEventListener('DOMContentLoaded', () => {
     // --- STATE MANAGEMENT ---
     let allQuestions = [];
     let currentQuestionIndex = 0;
     let userAnswers = [];
-    let reportedType = {}; // This will store the final dichotomy results
+    let reportedType = {};
     let bestFitType = {};
     let currentVerificationIndex = 0;
     let dichotomiesToVerify = [];
+    let finalPayload = {};
 
     const DICHOTOMY_ORDER = ['E-I', 'S-N', 'T-F', 'J-P'];
-    const OMISSION_THRESHOLD = 15; // Threshold for showing a warning
+    const OMISSION_THRESHOLD = 15;
 
-    // Descriptions for verification step
     const VERIFICATION_DESCRIPTIONS = {
         'E': { title: "Extraversion (E)", text: "You direct your energy outwards towards people and things. You feel energized by interacting with others and prefer to be active and engaged in the world." },
         'I': { title: "Introversion (I)", text: "You direct your energy inwards towards ideas and experiences. You feel energized by time spent alone and prefer to reflect before taking action." },
@@ -27,24 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
         'P': { title: "Perceiving (P)", text: "You prefer to live in a flexible, spontaneous way. You enjoy keeping your options open, staying curious, and adapting to new information as it comes." },
     };
 
-
     // --- DOM ELEMENTS ---
+    // ✅ Define ONE complete 'screens' object here.
     const screens = {
         welcome: document.getElementById('welcome-screen'),
         preferenceSkill: document.getElementById('preference-skill-screen'),
         quiz: document.getElementById('quiz-screen'),
         results: document.getElementById('results-screen'),
         verification: document.getElementById('verification-screen'),
-        final: document.getElementById('final-screen')
+        final: document.getElementById('final-screen'),
+        survey: document.getElementById('survey-screen'),
+        thankYou: document.getElementById('thank-you-screen')
     };
 
+    // All other DOM elements
     const startBtn = document.getElementById('start-btn');
     const continueToQuizBtn = document.getElementById('continue-to-quiz-btn');
     const prevBtn = document.getElementById('prev-btn');
     const skipBtn = document.getElementById('skip-btn');
     const verifyBtn = document.getElementById('verify-btn');
     const restartBtn = document.getElementById('restart-btn');
-
+    const continueToSurveyBtn = document.getElementById('continue-to-survey-btn');
+    const postQuizForm = document.getElementById('post-quiz-form');
+    // ... other elements ...
     const progressBar = document.getElementById('progress-bar');
     const questionContainer = document.getElementById('question-container');
     const omissionsWarning = document.getElementById('omissions-warning');
@@ -56,25 +60,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalTypeDisplay = document.getElementById('final-type-display');
 
     // --- INITIALIZATION ---
+    // Disable button until questions are loaded
+    startBtn.disabled = true;
     fetch('./questions.json')
         .then(response => response.json())
         .then(data => {
             allQuestions = data.MBTI_Form_M;
             userAnswers = new Array(allQuestions.length).fill(null);
-            startBtn.disabled = false;
+            startBtn.disabled = false; // Enable button now
         })
         .catch(error => {
             console.error("Failed to load questions:", error);
-            document.querySelector('.container').innerHTML = "<h1>Error</h1><p>Could not load assessment questions. Please try again later.</p>";
+            // Handle error UI
         });
-    startBtn.disabled = true;
-
 
     // --- FLOW CONTROL ---
     function switchScreen(activeScreen) {
-        for (const screen in screens) {
-            screens[screen].classList.remove('active');
+        if (!activeScreen) {
+            console.error("Attempted to switch to a non-existent screen.");
+            return;
         }
+        // Deactivate all screens
+        for (const screen in screens) {
+            if (screens[screen]) {
+                screens[screen].classList.remove('active');
+            }
+        }
+        // Activate the target screen
         activeScreen.classList.add('active');
     }
 
@@ -88,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         switchScreen(screens.quiz);
     }
 
-    function showResults() {
+    // ✅ Make this function `async` to handle the dynamic imports
+    async function showResults() {
         // Omission feedback logic
         const omissionsCount = userAnswers.filter(a => a === null).length;
         if (omissionsCount > OMISSION_THRESHOLD) {
@@ -105,7 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Call the scorer. The returned object now directly contains `dichotomyResults`.
+        // ✅ Dynamically import the scorer ONLY when we need it.
+        // This is efficient and solves the previous structural problem.
+        const { calculateResults } = await import('./scorer.js');
+
         const { dichotomyResults } = calculateResults(answersForScorer, { MBTI_Form_M: allQuestions });
         reportedType = dichotomyResults;
 
@@ -115,11 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
         switchScreen(screens.results);
     }
 
+    // --- (The rest of your functions are mostly fine, I'll include them for completeness) ---
+
     function startVerification() {
         bestFitType = {};
         dichotomiesToVerify = DICHOTOMY_ORDER.filter(key => reportedType[key].pcc === 'Slight');
 
-        // Assume reported type for non-slight preferences
         DICHOTOMY_ORDER.forEach(key => {
             if (reportedType[key].pcc !== 'Slight') {
                 bestFitType[key] = reportedType[key].preference;
@@ -127,23 +144,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (dichotomiesToVerify.length === 0) {
-            // If no dichotomies are 'Slight', all preferences have been set. Show final results.
             showFinalResults();
         } else {
-            // If there are 'Slight' dichotomies, start the verification process for them.
             currentVerificationIndex = 0;
             displayVerificationDichotomy();
             switchScreen(screens.verification);
         }
     }
 
+    async function saveResultsToDatabase(payload) {
+        const SUPABASE_URL = window.SUPABASE_URL;
+        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+        if (!SUPABASE_URL || SUPABASE_URL === 'YOUR_SUPABASE_URL') {
+            console.log("Supabase credentials not configured. Skipping save.");
+            return;
+        }
+        const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/save-results`;
+        try {
+            await fetch(FUNCTION_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                },
+                body: JSON.stringify(payload)
+            });
+        } catch (error) {
+            console.error('Error saving results to database:', error);
+        }
+    }
+
     function showFinalResults() {
         const finalTypeCode = DICHOTOMY_ORDER.map(d => bestFitType[d]).join('');
         finalTypeDisplay.innerHTML = `<h3>${finalTypeCode}</h3>`;
+        finalPayload = {
+            raw_answers: userAnswers.filter(a => a !== null),
+            best_fit_type: finalTypeCode,
+            reported_type: reportedType
+        };
         switchScreen(screens.final);
     }
 
-    // --- QUIZ LOGIC ---
+    function handleSurveySubmission() {
+        const formData = new FormData(postQuizForm);
+        finalPayload.email = formData.get('email') || null;
+        finalPayload.enjoys_frameworks = formData.get('enjoys_frameworks') === 'true';
+        finalPayload.wants_in_schools = formData.get('wants_in_schools') === 'true';
+        saveResultsToDatabase(finalPayload);
+        switchScreen(screens.thankYou);
+    }
+
     function showQuestion() {
         const question = allQuestions[currentQuestionIndex];
         let questionHTML = `<div class="question-text">${question.part === 'II' ? 'Which word in each pair appeals to you more?' : question.question}</div><div class="options-container">`;
@@ -161,44 +212,30 @@ document.addEventListener('DOMContentLoaded', () => {
         questionHTML += '</div>';
         questionContainer.innerHTML = questionHTML;
 
-        // Auto-advance on selection (except for the very last question)
         document.querySelectorAll('input[name="answer"]').forEach(input => {
             input.addEventListener('change', (e) => {
-                // First, visually update the selection
                 document.querySelectorAll('.option-label').forEach(label => label.classList.remove('selected'));
                 e.target.parentElement.classList.add('selected');
-
-                // Store the user's answer
                 userAnswers[currentQuestionIndex] = {
                     questionIndex: currentQuestionIndex,
                     choice: e.target.value
                 };
-
-                // Update the button text immediately after a selection is made
                 updateNavigationButtons();
-
-                // If it's not the last question, auto-advance after a short delay
                 if (currentQuestionIndex < allQuestions.length - 1) {
                     setTimeout(() => advanceToNextQuestion(), 300);
                 }
-                // If it IS the last question, do NOT auto-advance. User must click "Finish Assessment" button.
             });
-
-            // Handle clearing selection if user clicks the label of an already selected radio button
-            // This is crucial for enabling the "Skip and Finish Assessment" state on the last question
-            // after a selection was made.
             input.parentElement.addEventListener('click', (e) => {
                 const radio = e.currentTarget.querySelector('input[type="radio"]');
-                if (radio && radio.checked && e.target !== radio) { // Ensure click wasn't directly on the radio input itself
+                if (radio && radio.checked && e.target !== radio) {
                     radio.checked = false;
                     radio.parentElement.classList.remove('selected');
-                    userAnswers[currentQuestionIndex] = null; // Mark as omitted
-                    updateNavigationButtons(); // Update button text back to "Skip and Finish" if on last question
+                    userAnswers[currentQuestionIndex] = null;
+                    updateNavigationButtons();
                 }
             });
         });
 
-        // Restore previous selection if exists
         const savedAnswer = userAnswers[currentQuestionIndex];
         if (savedAnswer) {
             const selectedInput = document.querySelector(`input[value="${savedAnswer.choice}"]`);
@@ -207,18 +244,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectedInput.parentElement.classList.add('selected');
             }
         }
-
         updateProgress();
-        updateNavigationButtons(); // Ensure button text is correct on initial load of question
+        updateNavigationButtons();
     }
 
     function skipQuestion() {
-        // If it's the last question, pressing skip means finish the assessment
         if (currentQuestionIndex === allQuestions.length - 1) {
-            // The answer for the current question is already null if not selected, or its selected value.
             showResults();
         } else {
-            // For other questions, truly skip (mark as null) and advance
             userAnswers[currentQuestionIndex] = null;
             advanceToNextQuestion();
         }
@@ -247,33 +280,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateNavigationButtons() {
         prevBtn.style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
-
         if (currentQuestionIndex === allQuestions.length - 1) {
-            // On the last question:
-            if (userAnswers[currentQuestionIndex] !== null) {
-                skipBtn.textContent = 'Finish Assessment';
-            } else {
-                skipBtn.textContent = 'Skip and Finish Assessment';
-            }
-            skipBtn.classList.remove('btn-secondary'); // Ensure primary style if it was secondary from a prev page
+            skipBtn.textContent = userAnswers[currentQuestionIndex] !== null ? 'Finish Assessment' : 'Skip and Finish Assessment';
+            skipBtn.classList.remove('btn-secondary');
             skipBtn.classList.add('btn-primary');
         } else {
-            // For all other questions:
             skipBtn.textContent = 'Skip';
             skipBtn.classList.remove('btn-primary');
-            skipBtn.classList.add('btn-secondary'); // Revert to secondary style for skip button
+            skipBtn.classList.add('btn-secondary');
         }
     }
 
-
-    // --- RESULTS & VERIFICATION DISPLAY ---
     function displayResults(results) {
         resultsDisplay.innerHTML = '';
         DICHOTOMY_ORDER.forEach(key => {
             const result = results[key];
             const [pole1, pole2] = result.dichotomyName.split('-');
             const dichotomyName = `${VERIFICATION_DESCRIPTIONS[pole1].title.split(' ')[0]} / ${VERIFICATION_DESCRIPTIONS[pole2].title.split(' ')[0]}`;
-
             resultsDisplay.innerHTML += `
                 <div class="result-card">
                     <div class="letter">${result.preference}</div>
@@ -287,11 +310,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayVerificationDichotomy() {
         const dichotomyKey = dichotomiesToVerify[currentVerificationIndex];
         const [pole1, pole2] = dichotomyKey.split('-');
-
         verificationTitle.textContent = `Verify: ${VERIFICATION_DESCRIPTIONS[pole1].title} vs. ${VERIFICATION_DESCRIPTIONS[pole2].title}`;
         verificationInstruction.textContent = "Which of these two descriptions feels more like your natural, default way of being?";
         clarityText.textContent = reportedType[dichotomyKey].pcc.toLowerCase();
-
         verificationOptions.innerHTML = '';
         [pole1, pole2].forEach(pole => {
             const info = VERIFICATION_DESCRIPTIONS[pole];
@@ -303,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         });
-
         document.querySelectorAll('.verify-choice-btn').forEach(button => {
             button.addEventListener('click', handleVerificationChoice);
         });
@@ -313,7 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const choice = e.target.dataset.choice;
         const dichotomyKey = dichotomiesToVerify[currentVerificationIndex];
         bestFitType[dichotomyKey] = choice;
-
         currentVerificationIndex++;
         if (currentVerificationIndex < dichotomiesToVerify.length) {
             displayVerificationDichotomy();
@@ -322,12 +341,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     // --- EVENT LISTENERS ---
+    // ✅ All listeners are attached immediately after the DOM loads. This is correct.
     startBtn.addEventListener('click', startPreferenceExplanation);
     continueToQuizBtn.addEventListener('click', startQuiz);
     prevBtn.addEventListener('click', previousQuestion);
     skipBtn.addEventListener('click', skipQuestion);
     verifyBtn.addEventListener('click', startVerification);
     restartBtn.addEventListener('click', () => location.reload());
-});
+    continueToSurveyBtn.addEventListener('click', () => switchScreen(screens.survey));
+    postQuizForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSurveySubmission();
+    });
+
+}); // End of DOMContentLoaded
