@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function saveResultsToDatabase(payload) {
-        const SUPABASE_URL = window.SUPABASE_URL;
-        const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+        const SUPABASE_URL = "https://ggxvzeqgpnbjaibbzign.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdneHZ6ZXFncG5iamFpYmJ6aWduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0NTA1NzgsImV4cCI6MjA3MDAyNjU3OH0.RBxrY_JMTzsBf9qIrIsBceJxgH6KR6XP12p5442_4wo";
         if (!SUPABASE_URL || SUPABASE_URL === 'YOUR_SUPABASE_URL') {
             console.log("Supabase credentials not configured. Skipping save.");
             return;
