@@ -27,8 +27,8 @@ jobs:
       # It creates the dummy.js file and populates it with your secrets.
       - name: Inject Supabase credentials
         run: |
-          echo "window.SUPABASE_URL = '${{ secrets.SUPABASE_URL }}';" > dummy.js
-          echo "window.SUPABASE_ANON_KEY = '${{ secrets.SUPABASE_ANON_KEY }}';" >> dummy.js
+          echo "window.SUPABASE_URL = '${{ https://ggxvzeqgpnbjaibbzign.supabase.co }}';" > dummy.js
+          echo "window.SUPABASE_ANON_KEY = '${{ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdneHZ6ZXFncG5iamFpYmJ6aWduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0NTA1NzgsImV4cCI6MjA3MDAyNjU3OH0.RBxrY_JMTzsBf9qIrIsBceJxgH6KR6XP12p5442_4wo }}';" >> dummy.js
         
       # Step 3: Set up the GitHub Pages deployment artifact
       - name: Setup Pages
