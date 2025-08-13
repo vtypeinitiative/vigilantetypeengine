@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- DOM ELEMENTS ---
-    // ✅ Define ONE complete 'screens' object here.
+    // Define ONE complete 'screens' object here.
     const screens = {
         welcome: document.getElementById('welcome-screen'),
         preferenceSkill: document.getElementById('preference-skill-screen'),
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switchScreen(screens.quiz);
     }
 
-    // ✅ Make this function `async` to handle the dynamic imports
+    // Make this function `async` to handle the dynamic imports
     async function showResults() {
         // Omission feedback logic
         const omissionsCount = userAnswers.filter(a => a === null).length;
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // ✅ Dynamically import the scorer ONLY when we need it.
+        // Dynamically import the scorer ONLY when we need it.
         // This is efficient and solves the previous structural problem.
         const { calculateResults } = await import('./scorer.js');
 
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- EVENT LISTENERS ---
-    // ✅ All listeners are attached immediately after the DOM loads. This is correct.
+    // All listeners are attached immediately after the DOM loads. This is correct.
     startBtn.addEventListener('click', startPreferenceExplanation);
     continueToQuizBtn.addEventListener('click', startQuiz);
     prevBtn.addEventListener('click', previousQuestion);
